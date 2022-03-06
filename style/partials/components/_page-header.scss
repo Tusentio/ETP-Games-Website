@@ -1,0 +1,84 @@
+@use "../utils/variables" as vars;
+@use "../utils/mixins" as mix;
+
+.page-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 2.5rem 0;
+    transition: background 0.25s, box-shadow 0.25s, padding 0.25s;
+    z-index: 2;
+
+    .wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .wrapper > img {
+        width: 2.5rem;
+    }
+
+    .wrapper > nav ul {
+        margin-right: -12rem;
+        flex-direction: row;
+        align-items: center;
+        display: none;
+
+        @include mix.media-desktop {
+            display: flex;
+        }
+
+        li {
+            margin: 0 0.75rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.5);
+            transition: color 0.5s;
+        }
+
+        li.nav-active {
+            a {
+                color: #000;
+                font-weight: vars.$font-weight-bold;
+            }
+        }
+    }
+
+    .wrapper > a {
+        display: none;
+
+        @include mix.media-desktop {
+            display: initial;
+        }
+    }
+
+    .wrapper > button {
+        border: none;
+        background: none;
+        transition: transform 0.25s;
+
+        @include mix.media-desktop {
+            display: none;
+        }
+
+        &:focus {
+            transform: scale(0.75);
+        }
+
+        img {
+            width: 1.75rem;
+            height: 1.75rem;
+        }
+    }
+}
+
+.page-header-scrolling {
+    background: #fff;
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);
+    padding: 1.2rem 0;
+}

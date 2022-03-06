@@ -1,0 +1,83 @@
+@use "../utils/variables" as vars;
+@use "../utils/mixins" as mix;
+
+.hero-section {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin: auto;
+    padding-top: 8rem;
+
+    @include mix.media-desktop {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 94%;
+        padding-top: 10rem;
+    }
+
+    h1 {
+        font-weight: vars.$font-weight-bold;
+        font-size: vars.$font-size-heading;
+        text-align: center;
+        margin-top: 2rem;
+
+        @include mix.media-desktop {
+            text-align: left;
+        }
+    }
+
+    p {
+        text-align: center;
+        color: vars.$color-paragraph;
+        margin: 1rem 0;
+        line-height: vars.$line-height-regular;
+
+        @include mix.media-desktop {
+            text-align: left;
+        }
+    }
+
+    & > div {
+        @include mix.media-desktop {
+            margin-top: 2rem;
+        }
+    }
+
+    div > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        @include mix.media-desktop {
+            margin-top: 3rem;
+            justify-content: flex-start;
+        }
+
+        a:not(:last-child) {
+            margin-right: 1rem;
+        }
+    }
+
+    & > img {
+        width: 14rem;
+        opacity: 0;
+        animation: hero-image-transition 1.75s 0.25s cubic-bezier(0, 0.8, 0, 1) forwards;
+
+        @include mix.media-desktop {
+            width: 22rem;
+        }
+    }
+}
+
+@keyframes hero-image-transition {
+    0% {
+        opacity: 0;
+        transform: translateX(4rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

@@ -1,0 +1,58 @@
+@use "../utils/variables" as vars;
+
+#mobile-navigation {
+    position: fixed;
+    background: rgba(13, 21, 38, 0.95);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    animation: nav-visible 0.5s ease;
+
+    ul {
+        padding-top: 10vh;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 10vw;
+    }
+
+    a:not(.link-style-gradient) {
+        display: block;
+        text-decoration: none;
+        color: #fff;
+        font-size: vars.$font-size-big;
+    }
+
+    a {
+        margin-top: 3rem;
+        opacity: 0;
+    }
+
+    @for $i from 1 through 4 {
+        li:nth-child(#{$i}) a {
+            animation: nav-link-animation 0.5s $i * 0.1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+        }
+    }
+}
+
+@keyframes nav-visible {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes nav-link-animation {
+    0% {
+        opacity: 0;
+        transform: translateX(-1rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet" />
+
+        <!-- STYLE -->
+        <link rel="stylesheet" href="/style/main.css" />
+
+        <title>ETP Games</title>
+    </head>
+    <body>
+        <div id="vue-app">
+            <nav @click="showNav = false" v-if="showNav" id="mobile-navigation" v-cloak>
+                <ul>
+                    <li class="nav-active">
+                        <a href="#section-start">Start</a>
+                    </li>
+                    <li>
+                        <a href="#section-games">Games</a>
+                    </li>
+                    <li>
+                        <a href="#section-about">About</a>
+                    </li>
+                    <li>
+                        <a href="https://play.google.com/store/apps/developer?id=ETP+Games" class="link-style-gradient"
+                            >Visit our Google Play page</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <header class="page-header">
+            <div class="wrapper">
+                <img src="/media/ETP-icon.png" alt="ETP Icon" />
+                <nav id="desktop-navigation">
+                    <ul>
+                        <li data-section="section-start" class="nav-active">
+                            <a href="#section-start">Start</a>
+                        </li>
+                        <li data-section="section-games">
+                            <a href="#section-games">Games</a>
+                        </li>
+                        <li data-section="section-about">
+                            <a href="#section-about">About</a>
+                        </li>
+                    </ul>
+                </nav>
+                <a href="https://play.google.com/store/apps/developer?id=ETP+Games" class="link-style-outline"
+                    >Visit our Google Play page</a
+                >
+                <button onclick="showNavMenu()">
+                    <img src="/media/menu.svg" alt="Menu" />
+                </button>
+            </div>
+        </header>
+        <main class="wrapper">
+            <section id="section-start" class="hero-section">
+                <div>
+                    <h1>Epic, Next-Gen<br />Mobile Experiences</h1>
+                    <p>
+                        We're a team of highly intelligent creatures focused on creating<br />amazing mobile gaming
+                        experiences for all ages
+                    </p>
+                    <div>
+                        <a class="link-style-gradient" href="#section-games">Check out our games</a>
+                        <a class="link-style-outline" href="#section-about">About us</a>
+                    </div>
+                </div>
+                <img src="/media/phones-splash.png" alt="Phones" />
+            </section>
+            <section id="section-games">
+                <ul class="game-cards">
+                    <li>
+                        <img src="/media/PizzaPuzzleBanner.png" alt="PizzaPuzzle game banner" />
+                        <h3>Pizza Puzzle</h3>
+                        <p>
+                            Use your reaction time and distance calculating skills to build pizzas. Collect slices and
+                            unlock new and exciting skins.
+                        </p>
+                        <a
+                            class="link-style-outline"
+                            href="https://play.google.com/store/apps/details?id=com.etpgamesuf.pizzapuzzle"
+                            >FREE on Google Play</a
+                        >
+                    </li>
+                    <li>
+                        <img src="/media/KamokazeBanner.png" alt="Kamokaze game banner" />
+                        <h3>Kamokaze</h3>
+                        <p>
+                            In this action packed arcade game you take the role of a brave duck who has committed a
+                            serious war crime and needs to escape from the military air force. Dodge the dangerous bombs
+                            and protect the bird from its inevitable demise. Collect golden items to increase your score
+                        </p>
+                        <a
+                            class="link-style-outline"
+                            href="https://play.google.com/store/apps/details?id=org.godotengine.dumbduck"
+                            >FREE on Google Play</a
+                        >
+                    </li>
+                </ul>
+            </section>
+            <section id="section-about" class="info-section">
+                <h2>About ETP Games</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam dolores repellat esse quaerat tempora
+                    facilis, asperiores ea itaque similique quae facere? Repudiandae quam nam neque hic itaque.
+                    Incidunt, ratione fuga. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam voluptatum
+                    quam pariatur, et aperiam odit expedita, a laborum optio rerum rem illo necessitatibus blanditiis,
+                    ea adipisci autem quaerat excepturi animi!
+                </p>
+            </section>
+            <section class="info-section">
+                <h2>Our mission</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam dolores repellat esse quaerat tempora
+                    facilis, asperiores ea itaque similique quae facere? Repudiandae quam nam neque hic itaque.
+                    Incidunt, ratione fuga. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam voluptatum
+                    quam pariatur, et aperiam odit expedita, a laborum optio rerum rem illo necessitatibus blanditiis,
+                    ea adipisci autem quaerat excepturi animi!
+                </p>
+            </section>
+        </main>
+        <footer class="page-footer">
+            <div class="wrapper">
+                <img src="/media/ETP-logo-white.png" alt="ETP Games Logo" />
+                <p>Copyright © ETP Games 2022</p>
+            </div>
+        </footer>
+
+        <script src="/scripts/vue.global.js"></script>
+        <script src="/scripts/mobile-nav.js"></script>
+        <script src="/scripts/header.js"></script>
+    </body>
+</html>

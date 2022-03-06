@@ -1,0 +1,12 @@
+@use "../utils/mixins" as mix;
+
+body {
+    background-image: url("/media/background.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 100% 75rem;
+
+    @include mix.media-desktop {
+        background-size: 100% 60rem;
+    }
+}

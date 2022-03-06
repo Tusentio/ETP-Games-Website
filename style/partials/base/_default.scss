@@ -1,0 +1,27 @@
+@use "../utils/variables" as vars;
+
+[v-cloak] {
+    display: none;
+}
+
+:root {
+    font-size: vars.$font-size-regular;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: vars.$font-family-primary;
+    font-weight: vars.$font-weight-regular;
+    font-size: vars.$font-size-regular;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+ul,
+ol {
+    list-style: none;
+}

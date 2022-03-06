@@ -1,0 +1,35 @@
+@use "../utils/variables" as vars;
+
+@mixin link-style-base {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 1.1rem;
+    border-radius: 100rem;
+    text-decoration: none;
+    text-align: center;
+}
+
+.link-style-gradient {
+    @include link-style-base();
+    color: #fff;
+    background: linear-gradient(90deg, #0099ff, #5e29ff);
+    font-weight: vars.$font-weight-bold;
+    transition: transform 0.2s;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.link-style-outline {
+    @include link-style-base();
+    border: 0.15rem solid rgb(0, 0, 0);
+    color: #000;
+    transition: background 0.15s, color 0.15s;
+
+    &:hover {
+        background: #000;
+        color: #fff;
+    }
+}
